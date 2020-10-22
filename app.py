@@ -102,7 +102,6 @@ class ListTodos(Resource):
                 'category': row[2], 
                 'due_date': row[3] 
                 } 
-            print(dc)
             data.append(dc)
 
         mycursor.close()
