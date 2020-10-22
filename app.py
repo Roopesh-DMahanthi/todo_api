@@ -35,6 +35,9 @@ if (key == None):
 app = Flask(__name__)
 api = Api(app)
 
+class Home(Resource):
+    def get(self):
+        return """Welcome to Todo App API"""
 
 class Register(Resource):
     def post(self):
@@ -129,7 +132,7 @@ class SaveTodo(Resource):
         return {'status': 'success','status_code': 200},200 
 
 
-
+api.add_resource(Home,'/')
 api.add_resource(Register, '/app/agent')
 api.add_resource(Login, '/app/agent/auth')
 api.add_resource(ListTodos, '/app/sites/list/')
