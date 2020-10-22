@@ -83,7 +83,7 @@ class ListTodos(Resource):
         args = parser.parse_args()
         aid = args['agent']
         mycursor = mydb.cursor()
-        sql = 'SELECT title,description, category, due_date FROM todos WHERE agentid=%d;' % (int(aid))
+        sql = 'SELECT title,description, category, due_date FROM todos WHERE agentid=%d ORDER BY due_date ASC;;' % (int(aid))
         try:
             mycursor.execute(sql)
         except:
